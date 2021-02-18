@@ -2,7 +2,7 @@
   "name": "pwa-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anil-sidhu.github.io/react-pwa-project",
+  "homepage": "/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

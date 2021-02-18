@@ -4,7 +4,7 @@ export default function Users() {
     const [data, setData] = useState([])
     const [mode, setMode] = useState('online');
     useEffect(() => {
-        let url = "https://jsonplaceholder.typicode.com/users"
+        let url = "http://localhost:5000/users"
         fetch(url).then((response) => {
             response.json().then((result) => {
                 console.warn(result)
@@ -23,10 +23,8 @@ export default function Users() {
                 {
                     mode === 'offline' ?
                         <div class="alert alert-warning" role="alert">
-                            you are in offline mode or some issue with connection
-</div>
+                            you are in offline mode or some issue with connection</div>
                         : null
-
                 }
             </div>
             <Table striped bordered hover>
@@ -40,16 +38,15 @@ export default function Users() {
                 </thead>
                 <tbody>
                     {
-                        data.map((item) => (
-                            <tr>
+                        data.map((item, index) => (
+                            <tr key={index}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
-                                <td>{item.address.street}</td>
+                                <td>{item.address}</td>
                             </tr>
                         ))
                     }
-
                 </tbody>
             </Table>
         </div>

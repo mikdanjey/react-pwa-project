@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import Home from './Home'
@@ -8,7 +7,7 @@ import Users from './Users'
 // import firebase from './firebase'
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 function App() {
-  React.useEffect(()=>{
+  React.useEffect(() => {
     // const msg=firebase.messaging();
     // msg.requestPermission().then(()=>{
     //   return msg.getToken();

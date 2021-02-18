@@ -12,22 +12,17 @@ this.addEventListener("install", (event) => {
                 '/',
                 "/users"
             ])
-        })
-    )
-})
+        }));
+});
+
 this.addEventListener("fetch", (event) => {
-
-
-    // console.warn("url",event.request.url)
-
-
+    // console.warn("url", event.request.url);
     if (!navigator.onLine) {
         if (event.request.url === "http://localhost:3000/static/js/main.chunk.js") {
             event.waitUntil(
                 this.registration.showNotification("Internet", {
-                    body: "internet not working",
-                })
-            )
+                    body: "Internet not Working",
+                }));
         }
         event.respondWith(
             caches.match(event.request).then((resp) => {
@@ -36,7 +31,6 @@ this.addEventListener("fetch", (event) => {
                 }
                 let requestUrl = event.request.clone();
                 fetch(requestUrl)
-            })
-        )
+            }));
     }
-}) 
+});
